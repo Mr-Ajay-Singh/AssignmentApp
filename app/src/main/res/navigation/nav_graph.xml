@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/remoteFragment">
+    <fragment
+        android:id="@+id/localDatabase"
+        android:name="com.atmana.assignmentapp.LocalDatabase"
+        android:label="LocalDatabase" >
+        <action
+            android:id="@+id/action_localDatabase_to_remoteFragment"
+            app:destination="@id/remoteFragment" />
+        <action
+            android:id="@+id/action_localDatabase_to_dialogFragment"
+            app:destination="@id/dialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteFragment"
+        android:name="com.atmana.assignmentapp.RemoteFragment"
+        android:label="RemoteFragment" >
+        <action
+            android:id="@+id/action_remoteFragment_to_localDatabase"
+            app:destination="@id/localDatabase" />
+    </fragment>
+    <fragment
+        android:id="@+id/dialogFragment"
+        android:name="com.atmana.assignmentapp.DialogFragment"
+        android:label="DialogFragment" >
+        <action
+            android:id="@+id/action_dialogFragment_to_localDatabase"
+            app:destination="@id/localDatabase" />
+    </fragment>
+</navigation>
